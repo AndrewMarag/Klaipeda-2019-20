@@ -1,0 +1,55 @@
+import random
+counter=0
+player_1=[]
+player_2=[]
+set_of_numbers = []
+
+
+while(counter<100):
+   value =random.randint(0, 100)
+   set_of_numbers.insert(counter,value)
+   print(set_of_numbers[counter])
+
+   counter = counter + 1
+print("telos tou set of numbers")
+length=len(set_of_numbers)
+counter=0
+while(counter<(length/2)):
+    player_1.insert(counter, set_of_numbers[counter])
+    counter=counter+1
+
+
+while(counter<length):
+    player_2.insert(counter, set_of_numbers[counter])
+    counter=counter+1
+
+counter=0
+while(counter<50):
+   print(player_2[counter])
+   counter=counter+1
+
+win_1=0
+win_2=0
+counter=0
+while(counter<50):
+    print("player 1 play")
+   print("player 1 draw")
+   print("player card is" + str(player_1[counter]))
+   print("player 2 play")
+   print("player 2 draw")
+   print("player card is" + str(player_2[counter]))
+   if (player_1[counter]>player_2[counter]):
+       print("player 1 won this round")
+       win_1=win_1+1
+   else:
+    print("player 2 won this round")
+    win_2=win_2+1
+   counter=counter+1
+
+
+
+
+if(win_1>win_2):
+    print("player 1 won by"+str(win_1))
+else:
+  print("player 2 won by"+str(win_2))
